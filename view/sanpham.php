@@ -9,7 +9,7 @@
     foreach ($dssp as $sp) {
         extract($sp);
         $html_dssp.='<div class="box25 mr15 mb">
-                    <img src="images/'.$img.'" alt="">
+                    <img src="upload/'.$img.'" alt="">
                     <a href=""><span class="price">'.$name.'</span></a>
                     <span class="price">'.$price.'</span>
                     <a href="#"><button>Đặt hàng</button></a>
