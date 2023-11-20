@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     
     <header>
         <div class="logo">
-            <a href="index.html"><img src="../images/Screenshot 2023-11-13 203703.png" alt=""></a>
+            <a href="index.html"><img src="../upload/Screenshot 2023-11-13 203703.png" alt=""></a>
         </div>
         <div class="menu2">
             <li><a href="index.php">Trang chủ</a></li>
