@@ -20,6 +20,14 @@
                 include "danhmuc/add.php";
                 break;"danhmuc/list.php";
                 break;
+            case 'xoadm':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    delete_danhmuc($_GET['id']);
+                }
+                        
+                $listdanhmuc=danhmuc_all(); 
+                include "danhmuc/list.php";
+                break;
             case 'suadm':
                 if(isset($_GET['id']) && ($_GET['id']>0)){
                 $dm=loadone_danhmuc($_GET['id']);

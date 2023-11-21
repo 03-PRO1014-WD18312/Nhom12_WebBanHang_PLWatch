@@ -47,7 +47,7 @@
                         <?=$img ?>
                     </div>
                     <div class="row mb10">
-                        Mo ta <br>
+                        bestseller <br>
                         <input type="text" name="bestseller" id="" value="<?=$bestseller?>"> 
                     </div>
                     
