@@ -24,6 +24,10 @@ function loadall_danhmuc(){
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }
+function delete_danhmuc($id){
+    $sql = "delete from danhmuc where id=".$id;
+     pdo_execute($sql);
+}
 
 // /**
 //  * Cập nhật tên loại
