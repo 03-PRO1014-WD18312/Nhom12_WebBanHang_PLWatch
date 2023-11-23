@@ -42,11 +42,13 @@
     </div>
    </div><br>
     <span>So luong: </span>
-    <input type="hidden" name="tensp" value="'.$name.'">
-    <input type="hidden" name="img" value="'.$img.'">
-    <input type="hidden" name="price" value="'.$price.'">
-    <input type="number" name="" id=""> <br> <br>
-   <button type="submit" name="addcart">Dat hang</button>
+    <form action="index.php?pg=addcart" method="post">
+        <input type="hidden" name="tensp" value="'.$name.'">
+        <input type="hidden" name="img" value="'.$img.'">
+        <input type="hidden" name="price" value="'.$price.'">
+        <input type="number" name="soluong" id="" value=""> <br> <br>
+        <button type="submit" name="addcart">Dat hang</button>
+    </form>
     
 </div>';
 $html_dssp_view='';
@@ -61,8 +63,8 @@ $html_dssp_view='';
                             <div class="box25 mr15 p10">
                                 '.$best.'
                                 
-                                <a href="index.php?pg=chitietsanpham&id="'.$id.'><img src="upload/'.$img.'" alt=""></a>
-                                <a href="index.php?pg=chitietsanpham&id="'.$id.'><span class="price">'.$name.'</span></a>
+                                <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
+                                <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                                 <span class="price">'.$price.'đ</span>
                                 <a href="#"><button>Đặt hàng</button></a>
                             </div>';
