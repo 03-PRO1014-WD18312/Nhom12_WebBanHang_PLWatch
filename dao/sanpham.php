@@ -48,26 +48,25 @@ function get_dssp($kyw,$iddm){
     
 }
 function loadall_sanpham($kyw,$iddm){
-    $sql = "select * from sanpham where 1" ;
-    if($kyw!=""){
-        $sql.=" and name LIKE '%".$kyw."%'";
-    }
+    $sql = "SELECT * FROM sanpham WHERE 1";
     if($iddm>0){
-        $sql.=" and iddm ='".$iddm."'";
+        $sql .= " AND iddm=".$iddm;
     }
-    $sql.= " order by id desc";
+    if($kyw!=""){
+        $sql .= " AND NAME LIKE '%".$kyw."%'" ;
+    }
+    $sql .= " ORDER BY id DESC ";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function insert_sanpham($tensp,$giasp,$img,$bestseller,$iddm){
-    $sql = "INSERT INTO sanpham(name,price,img,bestseller,iddm) values('$tensp','$giasp','$img','$bestseller','$iddm')";
+function insert_sanpham($tensp,$giasp,$img,$mota,$bestseller,$iddm){
+    $sql = "INSERT INTO sanpham(name,price,img,mota,bestseller,iddm) values('$tensp','$giasp','$img','$mota','$bestseller','$iddm')";
      pdo_execute($sql);
 }
-function  update_sanpham($id,$iddm,$tensp,$giasp,$bestseller,$img){
-    if($img!="")
-        $sql = "update sanpham set  iddm='".$iddm."', name='".$tensp."', price='".$giasp."', bestseller='".$bestseller."', img='".$img."' where id=".$id;
-    else
-        $sql = "update sanpham set  iddm='".$iddm."' name='".$tensp."', price='".$giasp."',  bestseller='".$bestseller."'where id=".$id;
+function  update_sanpham($id,$iddm,$tensp,$giasp,$mota,$bestseller,$img){
+   
+    $sql = "update sanpham set  iddm='".$iddm."', name='".$tensp."', price='".$giasp."', bestseller='".$bestseller."', img='".$img."', mota='".$mota."' where id=".$id;
+    
     pdo_execute($sql);
 }
 function loadone_sanpham($id){
@@ -78,6 +77,11 @@ function loadone_sanpham($id){
 function delete_sanpham($id){
     $sql = "delete from sanpham where id=".$id;
      pdo_execute($sql);
+}
+function load_sanpham_cungloai($id,$iddm){
+    $sql = "select * from sanpham where iddm=".$iddm." AND id <> ".$_GET['id'];
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
 }
 // function hang_hoa_select_by_id($ma_hh){
 //     $sql = "SELECT * FROM hang_hoa WHERE ma_hh=?";
