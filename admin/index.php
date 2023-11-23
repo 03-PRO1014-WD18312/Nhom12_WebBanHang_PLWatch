@@ -61,6 +61,7 @@
                     $iddm = $_POST['iddm']; 
                     $tensp = $_POST['tensp'];                       
                     $giasp = $_POST['giasp'];
+                    $view = $_POST['view'];
                     $bestseller = $_POST['bestseller'];
                     $img = $_FILES['img']['name'];
 
@@ -70,7 +71,7 @@
                     move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
 
-                        insert_sanpham($tensp,$giasp,$img,$bestseller,$iddm);
+                        insert_sanpham($tensp,$giasp,$img,$view,$bestseller,$iddm);
                         $thongbao="them thanh cong";
                          
                 }

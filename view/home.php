@@ -23,8 +23,8 @@
         $html_dssp_best.='
                             <div class="box25 mr15 p10">
                                 <div class="best"></div>
-                                <img src="upload/'.$img.'" alt="">
-                                <span class="price">'.$name.'</span>
+                                <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
+                                <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                                 <span class="price">'.$price.' đ</span>
                                 <a href="#"><button>Đặt hàng</button></a>
                             </div>';
@@ -41,8 +41,9 @@
         $html_dssp_view.='
                             <div class="box25 mr15 p10">
                                 '.$best.'
-                                <img src="upload/'.$img.'" alt="">
-                                <span class="price">'.$name.'</span>
+                                
+                                <a href="index.php?pg=chitietsanpham&id="'.$id.'><img src="upload/'.$img.'" alt=""></a>
+                                <a href="index.php?pg=chitietsanpham&id="'.$id.'><span class="price">'.$name.'</span></a>
                                 <span class="price">'.$price.'đ</span>
                                 <a href="#"><button>Đặt hàng</button></a>
                             </div>';
