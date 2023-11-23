@@ -5,13 +5,13 @@
     foreach ($_SESSION['giohang'] as $sp) {
         
         extract($sp);
-        $tt=$price*$soluong;    
+        $tt=$sp[2]*$sp[3];    
         $html_cart.='<tr>
                         <th>'.$i.'</th>
-                        <th>'.$name.'</th>
-                        <th><img src="'.$img.'" alt="" width="100"></th>
-                        <th>'.$price.'</th>
-                        <th>'.$soluong.'</th>
+                        <th>'.$sp[0].'</th>
+                        <th><img src="upload/'.$sp[1].'" alt="" width="100"></th>
+                        <th>'.$sp[2].'</th>
+                        <th>'.$sp[3].'</th>
                         <th>'.$tt.'</th>
                         <th><a href="index.php?pg=dlcart">xoa</a></th>
                     </tr> ';

@@ -2,7 +2,7 @@
     $html_ctsp="";
     extract($onesp);
     $html_ctsp.='<div class="boxtrai1">
-    <img src="images/'.$img.'" alt="">
+    <img src="upload/'.$img.'" alt="">
 </div>
 <div class="boxphai1 ">
     <div class="tieude">
