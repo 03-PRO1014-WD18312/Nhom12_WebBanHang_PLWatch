@@ -29,6 +29,10 @@
                         <input type="file" name="img" >
                     </div>
                     <div class="row mb10">
+                        view <br>
+                        <input type="text" name="view" >
+                    </div>
+                    <div class="row mb10">
                         Besttseller<br>
                         <input type="text" name="bestseller">
                     </div>
