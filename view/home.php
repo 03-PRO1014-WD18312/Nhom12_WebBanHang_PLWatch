@@ -10,7 +10,7 @@
         $html_dssp_new.='
                             <div class="box25 mr15 p10">
                                 '.$best.'
-                                <img src="upload/'.$img.'" alt="">
+                               
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                                 <a href="#"><button>Đặt hàng</button></a>
