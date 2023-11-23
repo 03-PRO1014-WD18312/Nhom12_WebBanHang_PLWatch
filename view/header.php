@@ -1,3 +1,13 @@
+<?php
+    if(isset($_SESSION['s_user']) && $_SESSION['s_user']!=""){
+        extract($_SESSION['s_user']); 
+        $html_account='<li><a href="index.php?pg=myaccount">'.$username.'</a></li>
+                        <li><a href="index.php?pg=logout">Thoat</a></li>';
+    }else{
+        $html_account='<li><a href="index.php?pg=dangky">Đăng ký</a></li>
+                       <li><a href="index.php?pg=dangnhap">Đăng nhập</a></li>';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,13 +33,13 @@
         </div>
         <div class="others">
             <li>
-                <form action="index.php?pg=sanpham" method="post">
+                <form action="index.php?pg=sanpham" method="post" require> 
                     <input type="text" name="kyw" id="" placeholder="Nhap tu khoa tim kiem">
                     <input class="submit" type="submit" name="timkiem" value="Tìm kiếm">
                 </form>
             </li>
-            <li><a href="">Đăng ký</a></li>
-            <li><a href="">Đăng nhập</a></li>
-            <li><a href="">Giỏ hàng</a></li>
+            <?=$html_account;?>
+            
+            <li><a href="index.php?pg=viewcart">Giỏ hàng</a></li>
         </div>
     </header>
