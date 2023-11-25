@@ -69,6 +69,9 @@
             case 'viewcart':
                 include "view/viewcart.php";
                 break;
+            case 'dlcart':
+                include "view/dlcart.php";
+                break;
             case 'logout':
                 if(isset($_SESSION['s_user']) && $_SESSION['s_user']!=""){
                     unset($_SESSION['s_user']);
