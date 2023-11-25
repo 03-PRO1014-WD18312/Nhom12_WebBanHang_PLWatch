@@ -91,6 +91,7 @@
                     $iddm = $_POST['iddm']; 
                     $tensp = $_POST['tensp'];                       
                     $giasp = $_POST['price'];
+                    $mota = $_POST['mota'];
                     $bestseller = $_POST['bestseller'];
                     $img = $_FILES['img']['name'];
 
@@ -100,12 +101,13 @@
                     move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
 
-                    update_sanpham($id,$iddm,$tensp,$giasp,$bestseller,$img);
+                    update_sanpham($id,$iddm,$tensp,$giasp,$mota,$bestseller,$img);
                     $thongbao="cap nhat thanh cong";
                 }
-                $listdanhmuc=loadall_danhmuc();
-                $listsanpham=loadall_sanpham();
-                include "sanpham/list.php";
+                // $listdanhmuc=loadall_danhmuc();
+                // $listsanpham=loadall_sanpham();
+                // include "sanpham/list.php";
+                header('location:?pg=listsp');
                 break;
             case 'xoasp':
                 if(isset($_GET['id']) && ($_GET['id']>0)){
