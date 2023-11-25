@@ -1,10 +1,14 @@
 <?php
     if (is_array($sanpham)){
         extract($sanpham);
+        echo '<pre>';
+        print_r($sanpham);
+        echo '</pre>';
+        echo 13;
     }
     $hinhpath="../upload/".$img;
     if(is_file($hinhpath)){
-        $img = "<img src='".$hinhpath."' height='80'";
+        $img = "<img src='".$hinhpath."' height='80'>";
     }   else {
         $img = "no photo";
     }
@@ -20,10 +24,11 @@
                             <option value="0" selected>Tat ca</option>
                             <?php
                                foreach ( $listdanhmuc as $danhmuc) {
-                                extract($danhmuc);
-                                if($iddm==$id) 
+                                // 
+                                // extract($danhmuc);
+                                if($iddm==$danhmuc['id']) 
                                 $s="selected"; else $s="";
-                                 echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
+                                 echo '<option value="'.$danhmuc['id'].'" '.$s.'>'.$danhmuc['name'].'</option>';
                                }
                             ?>
                             
@@ -45,6 +50,10 @@
                         Hinh <br>
                         <input type="file" name="img" >
                         <?=$img ?>
+                    </div>
+                    <div class="row mb10">
+                        Mo ta <br>
+                        <textarea name="mota"  cols="30" rows="10"><?=$mota?></textarea>
                     </div>
                     <div class="row mb10">
                         bestseller <br>
