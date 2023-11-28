@@ -1,11 +1,13 @@
 <?php
+  
     
     $html_cart='';
     $i=1;
     foreach ($_SESSION['giohang'] as $key => $sp) {
         $id = $key+1;
         extract($sp);
-        $tt=$sp[2]*$sp[3];    
+        
+        $tt=(int)$sp[2]*(int)$sp[3];    
         $html_cart.='<tr>
                         <th>'.$i.'</th> 
                         <th>'.$sp[0].'</th>
@@ -17,6 +19,7 @@
                     </tr> ';
         $i++;
     }
+  $html_tong=get_tongdonhang();
 ?>
 <div class="row frmcontent">
                 <div class="row mb10 frmdsloaihang">
@@ -43,7 +46,9 @@
                             <th><a href="">xoa</a></th>
                         </tr> -->    
                     </table><br>
-                    <button>dat mua </button>
+                    <p>Tong tien: <?=$html_tong?></p>
+                    <p>Tong thanh toan: <?=$html_tong?></p>
+                    <a href="index.php?pg=donhang"><button>Datmua</button></a>                
                 </div>
                 
             </div>

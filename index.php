@@ -8,6 +8,8 @@
     include "dao/user.php";
     include "dao/danhmuc.php";
     include "dao/sanpham.php";
+    include "dao/giohang.php";
+    include "dao/donhang.php";
     include "view/header.php";
     //dat trang chu
     $dssp_new= get_dssp_new();
@@ -39,11 +41,13 @@
             case 'addcart':
                 
                 if (isset($_POST['addcart'])) {
+                    $idpro = $_POST['idpro'];
                     $name=$_POST['tensp'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=$_POST['soluong'];
-                    $sp=[$name,$img,$price,$soluong];
+                    $thanhtien = (int)$soluong * (int)$price;
+                    $sp=[$name,$img,$price,$soluong,$idpro,$thanhtien];
                     array_push($_SESSION['giohang'],$sp);
                     header('location: index.php?pg=viewcart');
                 }
@@ -67,6 +71,7 @@
                 
                 break;
             case 'viewcart':
+                    
                 include "view/viewcart.php";
                 break;
             case 'dlcart':
@@ -108,6 +113,51 @@
                 break;
             case 'gioithieu':
                 include "view/gioithieu.php";
+                break;
+            
+            case 'donhang':
+                if(isset($_POST['donhang']) ){
+                    $hoten=$_POST['hoten'];
+                    $diachi=$_POST['diachi'];
+                    $dienthoai=$_POST['dienthoai'];
+                    $email=$_POST['email'];
+                    $nguoinhan_ten=$_POST['hoten_nguoinhan'];
+                    $nguoinhan_diachi=$_POST['diachi_nguoinhan'];
+                    $nguoinhan_tel=$_POST['dienthoai_nguoinhan'];
+                    $pttt=$_POST['pttt'];
+                    $username= "guest".rand(1,999);
+                    $password="123456";
+
+                    $iduser=user_insert_id($password, $username, $hoten, $email, $dienthoai, $diachi);
+
+                    $madh = "F-Watch".$iduser."-".date("His-dmY");   
+                    $total = get_tongdonhang();
+                    $ship = 0;
+                    $voucher = 0;
+                    $tongthanhtoan = ($total - $voucher) + $ship;
+                    $idbill = bill_insert_id($madh, $iduser, $hoten, $diachi,  $email, $dienthoai, $nguoinhan_ten, $nguoinhan_diachi, $nguoinhan_tel, $total, $ship, $voucher, $tongthanhtoan, $pttt);
+                    
+                    foreach ($_SESSION['giohang'] as $key => $sp) {
+                        $id = $key+1;
+                        extract($sp);
+                        $name = $sp[0];
+                        $price = $sp[2];
+                        $img = $sp[1];
+                        $soluong = $sp[3];
+                        $thanhtien = $sp[2] + $sp[3];
+                        $idpro =$id;
+                        cart_insert($idbill, $idpro,  $price, $name, $img, $soluong, $thanhtien );
+                    }
+                    $_SESSION['giohang']=null;
+                    
+                    
+
+                }
+                
+                include "view/donhang.php";
+                
+
+            
                 break;
             default:
                 include "view/home.php";
