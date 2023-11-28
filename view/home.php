@@ -13,7 +13,14 @@
                                
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
-                                <a href="#"><button>Đặt hàng</button></a>
+                                <span class="price">'.$price.' đ</span>
+                                <form action="index.php?pg=addcart" method="post">
+                                    <input type="hidden" name="tensp" value="'.$name.'">
+                                    <input type="hidden" name="img" value="'.$img.'">
+                                    <input type="hidden" name="price" value="'.$price.'">
+                                    <input type="hidden" name="soluong" value="1">
+                                    <button type="submit" name="addcart">Đặt hàng</button>
+                                </form>
                             </div>';
                         
     }
@@ -26,7 +33,13 @@
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                                 <span class="price">'.$price.' đ</span>
-                                <a href="#"><button>Đặt hàng</button></a>
+                                <form action="index.php?pg=addcart" method="post">
+                                    <input type="hidden" name="tensp" value="'.$name.'">
+                                    <input type="hidden" name="img" value="'.$img.'">
+                                    <input type="hidden" name="price" value="'.$price.'">
+                                    <input type="hidden" name="soluong" value="1">
+                                    <button type="submit" name="addcart">Đặt hàng</button>
+                                </form>
                             </div>';
                         
     }
@@ -45,7 +58,13 @@
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
                                 <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                                 <span class="price">'.$price.'đ</span>
-                                <a href="#"><button>Đặt hàng</button></a>
+                                <form action="index.php?pg=addcart" method="post">
+                                    <input type="hidden" name="tensp" value="'.$name.'">
+                                    <input type="hidden" name="img" value="'.$img.'">
+                                    <input type="hidden" name="price" value="'.$price.'">
+                                    <input type="hidden" name="soluong" value="1">
+                                    <button type="submit" name="addcart">Đặt hàng</button>
+                                </form>
                             </div>';
                         
     }
