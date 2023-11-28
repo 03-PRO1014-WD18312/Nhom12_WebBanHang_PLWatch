@@ -5,6 +5,13 @@ function user_insert($username, $password,  $email, $sdt){
     $sql = "INSERT INTO users(username, password,  email, sdt) VALUES (?, ?, ?, ?)";
     pdo_execute($sql, $username, $password,  $email, $sdt);
 }
+
+function user_insert_id($password, $username, $ten, $diachi,  $email, $sdt){
+    $sql = "INSERT INTO users(username, password, ten, diachi,   email, sdt) VALUES (?, ?, ?, ?, ?, ?)";
+    return pdo_execute_id($sql, $password, $username, $ten, $diachi,  $email, $sdt);
+    
+}
+
 function  checkuser($username, $password){
     $sql = "SELECT * FROM users WHERE username=? AND password=? ";
     return pdo_query_one($sql, $username, $password);
