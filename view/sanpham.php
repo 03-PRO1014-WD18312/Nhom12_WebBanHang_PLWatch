@@ -13,6 +13,7 @@
                     <a href="index.php?pg=chitietsanpham&id='.$id.'"><img src="upload/'.$img.'" alt=""></a>
                     <a href="index.php?pg=chitietsanpham&id='.$id.'"><span class="price">'.$name.'</span></a>
                     <form action="index.php?pg=addcart" method="post">
+                        <input type="hidden" name="idpro" value="'.$id.'">
                         <input type="hidden" name="tensp" value="'.$name.'">
                         <input type="hidden" name="img" value="'.$img.'">
                         <input type="hidden" name="price" value="'.$price.'">
