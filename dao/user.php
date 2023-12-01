@@ -22,7 +22,16 @@ function  checkuser($username, $password){
     //     return 0;
     // }
 }
+function loadall_user(){
+    $sql = "SELECT * FROM users order by id desc";
+    $listuser = pdo_query($sql);
+    return $listuser;
+}
 
+function delete_user($id){
+    $sql = "delete from users where id=".$id;
+     pdo_execute($sql);
+}
 // function checkuser($username, $password){
 //     $sql = "select * from users where username='".$username."'and password='".$password."'";
 //     $sp = pdo_query_one($sql);

@@ -19,7 +19,7 @@
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php?pg=lisdm">Danh mục</a></li>
             <li><a href="index.php?pg=listsp">Sản phẩm</a></li>
-            <li><a href="">Khách hàng</a></li>
+            <li><a href="index.php?pg=listuser">Khách hàng</a></li>
             <li><a href="">Đơn hàng</a></li>
             <li><a href="">Bình luận</a></li>
             <li><a href="">Thông kê</a></li>
