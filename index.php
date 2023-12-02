@@ -102,7 +102,7 @@
                         $_SESSION['s_user'] = $kq;
                         header  ('location: index.php');
                     }else{
-                        $tb = "Tai khoan khong ton tai hoc thong tin dang nhap chua chinh xac";
+                        $tb = "Tài khoản không tồn tại hoặc thông tin đăng nhập chưa chính xác";
                         $_SESSION['tb_dangnhap'] = $tb;
                         header  ('location: index.php?pg=dangnhap');
                     }
@@ -148,16 +148,22 @@
                         $idpro =$id;
                         cart_insert($idbill, $idpro,  $price, $name, $img, $soluong, $thanhtien );
                     }
-                    $_SESSION['giohang']=null;
+                    
+                    // $_SESSION['giohang']=null;
+                    
+                    include "view/donhang_confirm.php";
+                    
                     
                     
 
                 }
                 
+
                 include "view/donhang.php";
                 
-
-            
+                break;
+            case 'donhangconfirm':
+                include "view/donhang_confirm.php";
                 break;
             default:
                 include "view/home.php";

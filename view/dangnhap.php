@@ -86,7 +86,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
+li{
+    list-style: none;
+}
     </style>
 </head>
 <body>
@@ -104,25 +106,25 @@ a:hover {
             </h2>
             <form action="index.php?pg=login" method="post">
                             <div class="row mb10">
-                                Ten dang nhap <br>
+                                Tên đăng nhập <br>
                                 <input type="text" name="username">
                             </div>
                             <div class="row mb10">
-                                Mat khau <br>
+                                Mật khẩu <br>
                                 <input type="password" name="password">
                             </div>
                             <div class="row mb10">
-                                <input type="checkbox" name="">Ghi nho tai khoan
+                                <input type="checkbox" name="">Ghi nhớ tài khoản
                             </div>
                             <div class="row mb10">
                                 <input type="submit" value="dang nhap" name="dangnhap">
                             </div>
                         </form>
                         <li>
-                            <a href="">Quen mat khau</a>
+                            <a href="">Quên mật khẩu</a>
                         </li>
                         <li>
-                            <a href="index.php?pg=dangky">Dang ky thanh vien</a>
+                            <a href="index.php?pg=dangky">Đăng ký tài khoản mới</a>
                         </li>
 
         </div>

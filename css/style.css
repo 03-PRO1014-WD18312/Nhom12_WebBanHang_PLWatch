@@ -431,3 +431,6 @@ input[type="submit"]{
         margin: 0 auto;
     
 }
+.bd{
+    border: #444444 1px solid;
+}

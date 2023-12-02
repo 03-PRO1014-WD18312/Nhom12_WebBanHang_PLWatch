@@ -24,7 +24,7 @@ require_once 'pdo.php';
 // }
 
 function get_dssp_new(){
-    $sql = "SELECT * FROM sanpham ORDER BY id DESC limit 4 ";
+    $sql = "SELECT * FROM sanpham ORDER BY id DESC limit 8 ";
     return pdo_query($sql);
 }
 function get_dssp_best(){
@@ -32,7 +32,7 @@ function get_dssp_best(){
     return pdo_query($sql);
 }      
 function get_dssp_view(){
-    $sql = "SELECT * FROM sanpham ORDER BY view DESC ";
+    $sql = "SELECT * FROM sanpham ORDER BY view DESC limit 8";
     return pdo_query($sql);
 }         
 function get_dssp($kyw,$iddm){
@@ -59,8 +59,8 @@ function loadall_sanpham($kyw,$iddm){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function insert_sanpham($tensp,$giasp,$img,$mota,$bestseller,$iddm){
-    $sql = "INSERT INTO sanpham(name,price,img,mota,bestseller,iddm) values('$tensp','$giasp','$img','$mota','$bestseller','$iddm')";
+function insert_sanpham($tensp,$giasp,$img,$mota,$view,$bestseller,$iddm){
+    $sql = "INSERT INTO sanpham(name,price,img,mota,view,bestseller,iddm) values('$tensp','$giasp','$img','$view','$mota','$bestseller','$iddm')";
      pdo_execute($sql);
 }
 function  update_sanpham($id,$iddm,$tensp,$giasp,$mota,$bestseller,$img){

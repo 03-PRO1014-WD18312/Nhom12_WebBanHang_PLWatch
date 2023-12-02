@@ -8,7 +8,7 @@
     <div class="tieude">
         <h3>'.$name.'</h3>
         <span class="price1">'.$price.'</span>
-        <h4>MO TA</h4>
+        <h4>Mô Tả</h4>
         <p>'.$mota.'</p>
     </div>
     <div class="table">
@@ -41,7 +41,7 @@
         <p>Bảo hành chính hãng</p>
     </div>
    </div><br>
-    <span>So luong: </span>
+    <span>Số lượng: </span>
     <form action="index.php?pg=addcart" method="post">
         <input type="hidden" name="tensp" value="'.$name.'">
         <input type="hidden" name="img" value="'.$img.'">
@@ -120,7 +120,7 @@ $html_dssp_view='';
         </div> -->
         
         <div class="containerfull mr30">
-        <h2 align="center">San pham lien quan</h2>
+        <h2 align="center">Sản phẩm liên quan</h2>
                 <?=$html_dssp_view;?>
                 <!-- <div class="box25 mr15">
                     <img src="images/pierre-lannier-255F466.jpg" alt="">
