@@ -1,10 +1,7 @@
 <?php
     if (is_array($sanpham)){
         extract($sanpham);
-        echo '<pre>';
-        print_r($sanpham);
-        echo '</pre>';
-        echo 13;
+       
     }
     $hinhpath="../upload/".$img;
     if(is_file($hinhpath)){
