@@ -1,4 +1,26 @@
-
+<?php
+     $html_cart='';
+     
+     foreach ($_SESSION['giohang'] as $key => $sp) {
+         
+         extract($sp);
+         
+             
+         $html_cart.='<tr>
+                         
+                         <th>'.$sp[0].'</th>
+                        
+                         
+                         <th>'.$sp[3].'</th>
+                         
+                        
+                     </tr> ';
+        
+     }
+   
+    
+    $html_tong=get_tongdonhang();
+?>
 <section class="containerfull">
         <div class="container3">
         <form action="index.php?pg=donhang" method="post">
@@ -41,14 +63,17 @@
             </div>
             <div class="col3">
                 <h2>ĐƠN HÀNG</h2>
-                <div class="total">
-                    <div class="boxcart">
-                    <li>Sản phẩm 1 x 2</li>
-                    <li>Sản phẩm 2 x 3</li>
-                    <li>Sản phẩm 3 x 4</li>
-                    
-                    <h3>Tổng: 1000000</h3>
-                    </div>
+                <div class="total bd">
+                    <table  >
+                        <tr>
+                            
+                            <th>tên sản phẩm</th>
+                            
+                            <th>Số lượng</th>
+                            
+                        </tr>
+                        <?=$html_cart?>;
+                    </table>
                 </div>
                 
                 <div class="coupon">
@@ -67,7 +92,7 @@
                 </div>
                 <div class="total">
                     <div class="boxcart bggray">
-                        <h3>Tổng thanh toán: 1000000</h3>
+                        <?=$html_tong?>đ
                     </div>
                 </div>
                 <button type="submit" name="donhang">Thanh toán</button>

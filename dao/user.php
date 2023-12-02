@@ -9,9 +9,7 @@ function user_insert($username, $password,  $email, $sdt){
 function user_insert_id($password, $username, $ten, $diachi,  $email, $sdt){
     $sql = "INSERT INTO users(username, password, ten, diachi,   email, sdt) VALUES (?, ?, ?, ?, ?, ?)";
     return pdo_execute_id($sql, $password, $username, $ten, $diachi,  $email, $sdt);
-    
 }
-
 function  checkuser($username, $password){
     $sql = "SELECT * FROM users WHERE username=? AND password=? ";
     return pdo_query_one($sql, $username, $password);
@@ -23,11 +21,10 @@ function  checkuser($username, $password){
     // }
 }
 function loadall_user(){
-    $sql = "SELECT * FROM users order by id desc";
+    $sql = "select * from users order by id desc";
     $listuser = pdo_query($sql);
     return $listuser;
 }
-
 function delete_user($id){
     $sql = "delete from users where id=".$id;
      pdo_execute($sql);

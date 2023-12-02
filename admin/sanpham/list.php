@@ -1,11 +1,11 @@
 <div class="row">
             <div class="row frmtitle mb">
-                <h1>Danh sach loai hang hoa</h1>
+                <h1>Danh sách loại hàng hóa</h1>
             </div>
             <form action="index.php?pg=listsp" method="post">
                         <input type="text" name="kyw">
                         <select name="iddm" id="">
-                            <option value="0" selected>Tat ca</option>
+                            <option value="0" selected>Tất cả</option>
                             <?php
                                foreach ( $listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
@@ -21,11 +21,11 @@
                     <table>
                         <tr>
                             <th></th>
-                            <th>Ma loai</th>
-                            <th>Ten san pham</th>
-                            <th>Hinh</th>
-                            <th>Gia</th>
-                            <th>Luot xem</th>
+                            <th>Mã loại</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Hình</th>
+                            <th>Giá</th>
+                            <th>Lượt xem</th>
                             <th></th>
                         </tr>
                         <?php
@@ -47,7 +47,7 @@
                                 <td>'.$img.'</td>
                                 <td>'.$price.'</td>
                                 <td>'.$view.'</td>
-                                <td> <a href="'.$suasp.'"> <input type="button" value="sua"> </a> <a href="'.$xoasp.'"> <input type="button" value="xoa"> </a>  </td>
+                                <td> <a href="'.$suasp.'"> <input type="button" value="sửa"> </a> <a href="'.$xoasp.'"> <input type="button" value="xóa"> </a>  </td>
                                </tr> ';
                             }
                         ?>
@@ -55,11 +55,11 @@
                     </table>
                 </div>
                 <div class="row mb10">
-                    <input type="button" value="Chon tat ca">
-                    <input type="button" value="Bo chon tat ca ">
-                    <input type="button" value="Xoa cac muc da chon">
+                    <input type="button" value="Chọn tất cả">
+                    <input type="button" value="Bỏ chọn tất cả ">
+                    <input type="button" value="Xóa các mục đã chọn">
 
-                   <a href="index.php?pg=addsp"> <input type="button" value="Nhap them"></a>
+                   <a href="index.php?pg=addsp"> <input type="button" value="Nhập thêm"></a>
                 </div>
             </div>
         </div>

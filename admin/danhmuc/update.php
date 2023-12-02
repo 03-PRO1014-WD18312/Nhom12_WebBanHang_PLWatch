@@ -5,23 +5,23 @@
 ?>
 <div class="row">
             <div class="row frmtitle">
-                <h1>Cap nhat loai hang hoa</h1>
+                <h1>Cập nhật loại hàng hóa</h1>
             </div>
             <div class="row frmcontent">
                 <form action="index.php?pg=updatedm" method="post">
                     <div class="row mb10">
-                        Ma loai <br>
+                        Mã loại <br>
                         <input type="text" name="maloai" disabled>
                     </div>
                     <div class="row mb10">
-                        Ten loai <br>
+                        Tên loại <br>
                         <input type="text" name="tenloai" value="<?php if(isset($name)&&($name!="")) echo $name ?>">
                     </div>
                     <div class="row mb10">
                         <input type="hidden" name="id" value="<?php if(isset($id)&&($id>0)) echo $id ?>">
-                        <input type="submit" name="capnhat" value="Cap nhat">
-                        <input type="reset" value="Nhap lai ">
-                       <a href="index.php?pg=lisdm"> <input type="button" value="Danh sach"></a>
+                        <input type="submit" name="capnhat" value="Cập nhật">
+                        <input type="reset" value="Nhập lại ">
+                       <a href="index.php?pg=lisdm"> <input type="button" value="Danh sách"></a>
                     </div>
                     <?php   
                         if(isset($thongbao) && ($thongbao!="")) 

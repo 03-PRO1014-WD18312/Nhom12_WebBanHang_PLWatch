@@ -15,4 +15,9 @@
         $sql = "INSERT INTO cart(idbill, idpro,  price, name, img, soluong, thanhtien) VALUES (?, ?, ?, ?, ?, ?, ?)";
         pdo_execute($sql, $idbill, $idpro,  $price, $name, $img, $soluong, $thanhtien);
     }
+    function loadall_hang(){
+        $sql = "select * from cart order by id desc";
+        $listdanhmuc = pdo_query($sql);
+        return $listdanhmuc;
+    }
 ?>

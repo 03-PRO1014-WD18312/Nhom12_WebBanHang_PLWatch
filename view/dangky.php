@@ -79,11 +79,11 @@ input[type="reset"]:hover {
                 <input type="email" name="email" id="email">
             </div>
             <div class="row mb10">
-                Ten dang nhap <br>
+                Tên đăng nhập <br>
                 <input type="text" name="username">
             </div>
             <div class="row mb10">
-                Mat khau <br>
+                Mật khẩu <br>
                 <input type="password" name="password">
             </div>
             <div class="row mb10">

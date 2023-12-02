@@ -5,7 +5,7 @@
                 <form action="index.php?pg=adddm" method="post">
                     
                     <div class="row mb10">
-                        Ten loai <br>
+                        Tên loại <br>
                         <input type="text" name="tenloai">
                     </div>
                     <div class="row mb10">

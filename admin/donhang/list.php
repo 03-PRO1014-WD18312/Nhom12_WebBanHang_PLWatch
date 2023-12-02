@@ -1,6 +1,6 @@
 <div class="row">
             <div class="row frmtitle mb">
-                <h1>Danh sách tài khoản</h1>
+                <h1>Danh sách đơn hàng</h1>
             </div>
             
             <div class="row frmcontent">
@@ -8,31 +8,31 @@
                     <table>
                         <tr>
                             <th></th>
-                            <th>User name</th>
-                            <th>Password</th>
                             <th>Tên</th>
+                            <th>địa chỉ</th>
+                            <th>sô diện thoại</th>
                             <th>Email</th>
-                            <th>Số điện thoại</th>
+                            <th>mã đơn hàng</th>
+                            <th>Tổng thanh toán</th>
                             
                             <th></th>
                         </tr>
                         <?php
-                            foreach ($listuser as $user ) {
-                                extract($user);
+                            foreach ($listdonhang as $donhang ) {
+                                extract($donhang);
                                 
-                                $xoauser = "index.php?pg=xoauser&id=".$id;
                                 
                                 
                                 echo  '<tr>
                                 <td><input type="checkbox" name="" id=""></td>
                                 
-                                <td>'.$password.'</td>
-                                <td>'.$username.'</td>
-                                <td>'.$ten.'</td>
-                                <td>'.$diachi.'</td>
-                                <td>'.$email.'</td>
-                                
-                                <td> <a href="'.$xoauser.'"> <input type="button" value="xóa"> </a>   </td>
+                                <td>'.$nguoidat_ten.'</td>
+                                <td>'.$nguoidat_diachi.'</td>
+                                <td>'.$nguoidat_tel.'</td>
+                                <td>'.$nguoidat_email.'</td>
+                                <td>'.$madh.'</td>
+                                <td>'.$tongthanhtoan.'</td>
+                                <td>   </td>
                                </tr> ';
                             }
                         ?>

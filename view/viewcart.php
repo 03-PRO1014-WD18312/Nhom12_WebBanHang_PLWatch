@@ -23,16 +23,16 @@
 ?>
 <div class="row frmcontent">
                 <div class="row mb10 frmdsloaihang">
-                    <h1>Gio hang</h1>
+                    <h1>Giỏ hàng</h1>
                     <table>
                         <tr>
                             <th>STT</th>
-                            <th>Ten san pham</th>
-                            <th>hinh anh</th>
-                            <th>gia</th>
-                            <th>So luong</th>
-                            <th>thanh tien</th>
-                            <th>thao tac</th>
+                            <th>Tên sản phẩm</th>
+                            <th>hình ảnh</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>thành tiền</th>
+                            <th>thao tác</th>
                         </tr>
                         <?=$html_cart;?>
                         
@@ -46,9 +46,9 @@
                             <th><a href="">xoa</a></th>
                         </tr> -->    
                     </table><br>
-                    <p>Tong tien: <?=$html_tong?></p>
-                    <p>Tong thanh toan: <?=$html_tong?></p>
-                    <a href="index.php?pg=donhang"><button>Datmua</button></a>                
+                    <p>Tổng tiền: <?=$html_tong?></p>
+                    <p>Tổng thanh toán: <?=$html_tong?></p>
+                    <a href="index.php?pg=donhang"><button>đặt mua</button></a>                
                 </div>
                 
             </div>
