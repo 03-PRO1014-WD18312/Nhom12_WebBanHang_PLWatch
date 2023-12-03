@@ -88,6 +88,33 @@ if (!isset($_GET['pg'])) {
             $listdanhmuc = loadall_danhmuc();
             include "sanpham/update.php";
             break;
+        case 'suadonhang':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $sanpham = loadone_donhang($_GET['id']);
+            }
+            
+            include "donhang/update.php";
+            break;
+        case 'updatedonhang':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id = $_POST['id'];
+                $madh = $_POST['madh'];
+                $tennguoidat = $_POST['tennguoidat'];
+                $diachi = $_POST['diachi'];
+                $sdt = $_POST['sdt'];
+                $email = $_POST['email'];
+                $trangthai = $_POST['trangthai'];
+                
+
+
+                update_donhang($id,$madh,$tennguoidat,$diachi,$sdt,$email,$trangthai);
+                $thongbao = "cap nhat thanh cong";
+            }
+            // $listdanhmuc=loadall_danhmuc();
+            // $listsanpham=loadall_sanpham();
+            // include "sanpham/list.php";
+            header('location:?pg=listdonhang');
+            break;
         case 'updatesp':
             if (isset($_POST['capnhat']) && $_POST['capnhat']) {
                 $id = $_POST['id'];

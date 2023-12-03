@@ -15,7 +15,7 @@
                         <th>'.$sp[2].'</th>
                         <th>'.$sp[3].'</th>
                         <th>'.$tt.'</th>
-                        <th><a href="index.php?pg=dlcart&id='.$id.'">xoa</a></th>
+                        <th><a href="index.php?pg=dlcart&id='.$id.'">xóa</a></th>
                     </tr> ';
         $i++;
     }

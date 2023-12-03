@@ -14,14 +14,14 @@
                             <th>Email</th>
                             <th>mã đơn hàng</th>
                             <th>Tổng thanh toán</th>
-                            
+                            <th>Trạng thái</th>
                             <th></th>
                         </tr>
                         <?php
                             foreach ($listdonhang as $donhang ) {
                                 extract($donhang);
                                 
-                                
+                                $suadonhang = "index.php?pg=suadonhang&id=".$id;
                                 
                                 echo  '<tr>
                                 <td><input type="checkbox" name="" id=""></td>
@@ -32,7 +32,8 @@
                                 <td>'.$nguoidat_email.'</td>
                                 <td>'.$madh.'</td>
                                 <td>'.$tongthanhtoan.'</td>
-                                <td>   </td>
+                                <td>'.$trangthai.'</td>
+                                <td>  <a href="'.$suadonhang.'"> <input type="button" value="sửa"> </a> </td>
                                </tr> ';
                             }
                         ?>
