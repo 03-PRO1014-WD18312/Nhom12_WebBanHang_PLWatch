@@ -3,6 +3,7 @@ include "header.php";
 include "../dao/danhmuc.php";
 include "../dao/sanpham.php";
 include "../dao/user.php";
+include "../dao/donhang.php";
 if (!isset($_GET['pg'])) {
     include "home.php";
 } else {
@@ -63,6 +64,7 @@ if (!isset($_GET['pg'])) {
                 $iddm = $_POST['iddm'];
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
+                $mota = $_POST['mota'];
                 $view = $_POST['view'];
                 $bestseller = $_POST['bestseller'];
                 $img = $_FILES['img']['name'];
@@ -73,7 +75,7 @@ if (!isset($_GET['pg'])) {
                 move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
 
-                insert_sanpham($tensp, $giasp, $img, $view, $bestseller, $iddm);
+                insert_sanpham($tensp, $giasp, $img, $view, $mota, $bestseller, $iddm);
                 $thongbao = "them thanh cong";
             }
             $listdanhmuc = loadall_danhmuc();
@@ -85,6 +87,33 @@ if (!isset($_GET['pg'])) {
             }
             $listdanhmuc = loadall_danhmuc();
             include "sanpham/update.php";
+            break;
+        case 'suadonhang':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $sanpham = loadone_donhang($_GET['id']);
+            }
+            
+            include "donhang/update.php";
+            break;
+        case 'updatedonhang':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id = $_POST['id'];
+                $madh = $_POST['madh'];
+                $tennguoidat = $_POST['tennguoidat'];
+                $diachi = $_POST['diachi'];
+                $sdt = $_POST['sdt'];
+                $email = $_POST['email'];
+                $trangthai = $_POST['trangthai'];
+                
+
+
+                update_donhang($id,$madh,$tennguoidat,$diachi,$sdt,$email,$trangthai);
+                $thongbao = "cap nhat thanh cong";
+            }
+            // $listdanhmuc=loadall_danhmuc();
+            // $listsanpham=loadall_sanpham();
+            // include "sanpham/list.php";
+            header('location:?pg=listdonhang');
             break;
         case 'updatesp':
             if (isset($_POST['capnhat']) && $_POST['capnhat']) {
@@ -123,12 +152,25 @@ if (!isset($_GET['pg'])) {
             include "user/list.php";
 
             break;
+        case 'listdonhang':
+            $listdonhang = loadall_donhang();
+            include "donhang/list.php";
+    
+            break;
         case 'xoauser':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_user($_GET['id']);
             }
 
             $listuser = loadall_user();
+            include "user/list.php";
+            break;
+        case 'xoadonhang':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_donhang($_GET['id']);
+            }
+
+            $listdonhang = loadall_donhang();
             include "user/list.php";
             break;
         default:
