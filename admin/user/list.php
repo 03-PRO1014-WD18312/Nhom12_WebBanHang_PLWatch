@@ -13,15 +13,15 @@
                             <th>Tên</th>
                             <th>Email</th>
                             <th>Số điện thoại</th>
-                            <th>Địa chỉ</th>
+                            
                             <th></th>
                         </tr>
                         <?php
                             foreach ($listuser as $user ) {
                                 extract($user);
                                 
-                                
                                 $xoauser = "index.php?pg=xoauser&id=".$id;
+                                
                                 
                                 echo  '<tr>
                                 <td><input type="checkbox" name="" id=""></td>
@@ -31,8 +31,8 @@
                                 <td>'.$ten.'</td>
                                 <td>'.$diachi.'</td>
                                 <td>'.$email.'</td>
-                                <td>'.$sdt.'</td>
-                                <td>  <a href="'.$xoauser.'"> <input type="button" value="xoa"> </a>  </td>
+                                
+                                <td> <a href="'.$xoauser.'"> <input type="button" value="xóa"> </a>   </td>
                                </tr> ';
                             }
                         ?>
