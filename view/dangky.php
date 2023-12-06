@@ -52,7 +52,7 @@ a:hover {
     text-decoration: underline;
 }
 
-input[type="submit"],
+
 input[type="reset"] {
     background-color: #2ecc71;
     color: #fff;
@@ -67,6 +67,7 @@ input[type="reset"]:hover {
     background-color: #27ae60;
 }
 
+
     </style>
 </head>
 <body>
@@ -74,7 +75,7 @@ input[type="reset"]:hover {
     <div class="container3">
         <h1>ĐĂNG KÝ</h1>
         <form action="index.php?pg=adduser" method="post" require_once>
-            <div class="row mb10">
+            <div class="row mb10" style="margin-top: 50px;">
                 Email <br>
                 <input type="email" name="email" id="email">
             </div>
@@ -94,10 +95,10 @@ input[type="reset"]:hover {
                 <input type="checkbox" id="agree">Tôi đồng ý với các điều khoản <a href="#">người dùng</a> và<a href="#"> bảo mật</a>
             </div>
             <div class="row mb10">
-                <input type="submit" value="Đăng ký" name="dangky">
+                <input type="submit" value="Đăng ký" name="dangky" style="height: 40px; text-align: center;">
             </div>
             <div class="row mb10">
-                <input type="reset" value="Nhập lại">
+                <input type="reset" value="Nhập lại" style="height: 40px; text-align: center;">
             </div>
         </form>
     </div>

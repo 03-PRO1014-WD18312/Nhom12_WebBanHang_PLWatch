@@ -10,13 +10,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F-Watch</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -34,8 +36,8 @@
         <div class="others">
             <li>
                 <form action="index.php?pg=sanpham" method="post" require> 
-                    <input type="text" name="kyw" id="" placeholder="Nhap tu khoa tim kiem">
-                    <input class="submit" type="submit" name="timkiem" value="Tìm kiếm">
+                   <div class="tkiem"> <input type="text" name="kyw" id="" placeholder="Nhập từ khóa tìm kiếm"></div>
+                    <div class="tk"><input class="submit" type="submit" name="timkiem" value="Tìm kiếm"></div>
                 </form>
             </li>
             <?=$html_account;?>
@@ -43,3 +45,4 @@
             <li><a href="index.php?pg=viewcart">Giỏ hàng</a></li>
         </div>
     </header>
+    

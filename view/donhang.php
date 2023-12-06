@@ -72,7 +72,7 @@
                             <th>Số lượng</th>
                             
                         </tr>
-                        <?=$html_cart?>;
+                        <?=$html_cart?>
                     </table>
                 </div>
                 
