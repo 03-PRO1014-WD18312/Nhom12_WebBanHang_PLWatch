@@ -13,4 +13,13 @@
         $sql = "delete from bill where id=".$id;
          pdo_execute($sql);
     }
+    function loadone_donhang($id){
+        $sql = "select * from bill where id=".$_GET['id'];
+        $dh = pdo_query_one($sql);
+        return  $dh;
+    }
+    function  update_donhang($id, $madh, $tennguoidat, $diachi, $sdt , $email, $trangthai){
+        $sql = "update bill set  madh='".$madh."', nguoidat_ten='".$tennguoidat."', nguoidat_tel='".$sdt."', nguoidat_email='".$email."', nguoidat_diachi='".$diachi."', trangthai='".$trangthai."' where id=".$id;
+        pdo_execute($sql);
+    }
 ?>
