@@ -86,6 +86,7 @@ function delete_sanpham($id){
     $sql = "delete from sanpham where id=".$id;
      pdo_execute($sql);
 }
+// load sản phẩm cùng loại 
 function load_sanpham_cungloai($id,$iddm){
     $sql = "select * from sanpham where iddm=".$iddm." AND id <> ".$_GET['id'];
     $listsanpham = pdo_query($sql);
