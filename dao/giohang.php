@@ -20,4 +20,5 @@
         $listdanhmuc = pdo_query($sql);
         return $listdanhmuc;
     }
+    // load don hang 
 ?>

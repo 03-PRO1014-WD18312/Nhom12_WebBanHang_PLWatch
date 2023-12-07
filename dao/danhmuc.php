@@ -28,6 +28,7 @@ function delete_danhmuc($id){
     $sql = "delete from danhmuc where id=".$id;
      pdo_execute($sql);
 }
+//Xoa danh muc 
 
 // /**
 //  * Cập nhật tên loại

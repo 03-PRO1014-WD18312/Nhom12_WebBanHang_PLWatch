@@ -13,6 +13,7 @@
         $sql = "delete from bill where id=".$id;
          pdo_execute($sql);
     }
+    // xoa don hang 
     function loadone_donhang($id){
         $sql = "select * from bill where id=".$_GET['id'];
         $dh = pdo_query_one($sql);

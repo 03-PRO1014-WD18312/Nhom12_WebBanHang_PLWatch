@@ -47,6 +47,8 @@ function get_dssp($kyw,$iddm){
     return pdo_query($sql);
     
 }
+
+//load tất cả sản phẩm
 function loadall_sanpham($kyw,$iddm){
     $sql = "SELECT * FROM sanpham WHERE 1";
     if($iddm>0){
@@ -59,21 +61,27 @@ function loadall_sanpham($kyw,$iddm){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+// thêm sản phẩm 
 function insert_sanpham($tensp,$giasp,$img,$mota,$view,$bestseller,$iddm){
     $sql = "INSERT INTO sanpham(name,price,img,mota,view,bestseller,iddm) values('$tensp','$giasp','$img','$view','$mota','$bestseller','$iddm')";
      pdo_execute($sql);
 }
+// sửa sản phẩm 
 function  update_sanpham($id,$iddm,$tensp,$giasp,$mota,$bestseller,$img){
    
     $sql = "update sanpham set  iddm='".$iddm."', name='".$tensp."', price='".$giasp."', bestseller='".$bestseller."', img='".$img."', mota='".$mota."' where id=".$id;
     
     pdo_execute($sql);
 }
+
+// load 1 sản phẩm
 function loadone_sanpham($id){
     $sql = "select * from sanpham where id=".$_GET['id'];
     $sp = pdo_query_one($sql);
     return  $sp;
 }
+
+// xóa sản phẩm
 function delete_sanpham($id){
     $sql = "delete from sanpham where id=".$id;
      pdo_execute($sql);
