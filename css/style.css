@@ -30,6 +30,7 @@ header {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
 .others {
     flex: 2;
     display: flex;
@@ -433,4 +434,10 @@ input[type="submit"]{
 }
 .bd{
     border: #444444 1px solid;
+}
+.tk input{
+width: 80px;
+text-align: center;
+height: 27px;
+margin-left: -20px;
 }
